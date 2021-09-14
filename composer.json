@@ -1,0 +1,10 @@
+{
+    "name": "teknasyon/homework-hw5_grup3",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
