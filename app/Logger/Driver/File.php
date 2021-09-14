@@ -11,7 +11,7 @@ class File implements LogDriverInterface
 
     }
 
-    public function setLogFile(string $logFile): void
+    protected function setLogFile(string $logFile): void
     {
 
     }
