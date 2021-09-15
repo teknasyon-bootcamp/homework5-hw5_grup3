@@ -8,6 +8,12 @@ class File implements LogDriverInterface
 
     public function __construct(string $logFile)
     {
+
+    }
+
+    protected function setLogFile(string $logFile): void
+    {
+
     }
 
     public function setUp(): void
