@@ -7,10 +7,10 @@ use App\DB\Engine\DriverInterface;
 
 class Database
 {
-    protected object $driver;
+    protected DriverInterface $driver;
 
     public function setDriver(DriverInterface $driver): void {
-
+        $this->driver = $driver;
     }
     public function all(string $table): array{
 

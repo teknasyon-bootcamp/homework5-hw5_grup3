@@ -6,11 +6,14 @@ use App\DB\Engine\DriverInterface;
 
 class Database implements LogDriverInterface
 {
+    protected DriverInterface $driver;
+
     public function __construct(DriverInterface $driver)
     {
+
     }
     public function setDriver(DriverInterface $driver):void{
-
+        $this->driver = $driver;
     }
 
     public function setUp(): void
