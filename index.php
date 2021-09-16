@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 
 require "vendor/autoload.php";
@@ -29,12 +29,3 @@ $books = $mongoDb->all("book");
 var_dump($books);
 
 
-
-=======
-<?php
-require "vendor/autoload.php";
-
-$mysqlDB = new \App\DB\Engine\Mysql("localhost","root","","post");
-
-$post2 = $mysqlDB->find("posts",2);
->>>>>>> b086dbe8222bbdf99e7c3096262a2fb851c9b621
