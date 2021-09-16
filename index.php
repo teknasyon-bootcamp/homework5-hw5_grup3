@@ -24,7 +24,7 @@ require "vendor/autoload.php";
     object-fit: cover;
        }
        body {
-    background-image: url('./images/b37.jpg');
+    background-color: #ccc;
        }
     </style>
   </head>
@@ -50,6 +50,39 @@ require "vendor/autoload.php";
         </div>
       </nav>
     <!--NAVBAR - END-->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="./images/kitaps4.jpg" class="d-block w-100" width="300" height="600" alt="..." style="max-height: 600px;">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/kitaps.jpg" class="d-block w-100" width ="300" height="600" alt="..."
+          style="max-height: 600px;">
+        </div>
+        <div class="carousel-item">
+          <img src="./images/kitaps1.jpg" class="d-block w-100" width ="300" height="600" alt="" style="max-height: 600px;"> 
+        </div>
+        <div class="carousel-item">
+          <img src="./images/kitaps2.jpg" class="d-block w-100" width="300" height="600" alt="" style="max-height: 600px;"> 
+        </div>
+        <div class="carousel-item">
+          <img src="./images/kitaps3.jpg" class="d-block w-100" width ="300" height="600" alt="" style="max-height: 600px;"> 
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 
     <div class="container">
         <div class="row">
@@ -59,215 +92,187 @@ require "vendor/autoload.php";
         </div>
         <div class="row">
             <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="card mb-3 mr-2" style="width: 18rem;">
-                    <img style="margin: auto; width: 150px;" src="./images/aclik-oyunlari.jpg" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Açlık Oyunları</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Suzanne Collins</h6>
-                      <p class="card-text">Açlık Oyunları (İngilizce özgün adıyla The Hunger Games), Amerikalı yazar Suzanne Collins'in 2008'de yayımlanan distopik macera türündeki romanıdır.
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 ml-3 mb-2">
-                            <button type="button " class="btn btn-info btn-sm">İncele</button>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="card mb-3 mr-2" style="width: 18rem;">
-                    <img src="./images/amok-kosucusu.jpg" style="margin: auto; width: 150px;" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Amok Koşucusu</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Stefan Zweig</h6>
-                      <p class="card-text .card-img-top">Amok Koşucusu, Stefan Zweig'ın 1922'de yazdığı bir uzun öyküdür. Öykü adını, Uzakdoğu'da bir tür cinnet hâlini târif etmek için kullanılan "amok" tâbirinden alır.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 ml-3 mb-2">
-                            <button type="button" class="btn btn-info btn-sm">İncele</button>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="card mb-3 mr-2" style="width: 18rem;">
-                    <img src="./images/baslangic.jpg" style="margin: auto; width: 150px;" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Başlangıç</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Dan Brown</h6>
-                      <p class="card-text .card-img-top">Başlangıç, Dan Brown'ın 2017 yılında yayımladığı, Robert Langdon serisinin devam kitabı. Dinlerin kökeni ve inanç değerleri hakkında yazılmış bir gizem romanı özelliği taşımaktadır.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 ml-3 mb-2">
-                            <button type="button" class="btn btn-info btn-sm">İncele</button>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="card mb-3 mr-2" style="width: 18rem;">
-                    <img src="./images/hayvan-ciftligi.jpg" style="margin: auto; width: 150px;" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Hayvan Çiftliği</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">George Orwell</h6>
-                      <p class="card-text .card-img-top">Hayvan Çiftliği, George Orwell'in mecazi bir dille yazılmış, fabl tarzındaki siyasi hiciv romanı. Roman ilk olarak 1945'te Birleşik Krallık'ta yayımlandı.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 ml-3 mb-2">
-                            <button type="button" class="btn btn-info btn-sm">İncele</button>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="card mb-3 mr-2" style="width: 18rem;">
-                    <img src="./images/empati.jpg" style="margin: auto; width: 150px;" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Empati</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Adam Fawer</h6>
-                      <p class="card-text .card-img-top">Empati, Amerikalı yazar Adam Fawer tarafından kaleme alınan 2008 basım tarihli gnostisizm, empati, sinestezi gibi konuları eksenine oturtmuş bir romandır.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 ml-3 mb-2">
-                            <button type="button" class="btn btn-info btn-sm">İncele</button>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="card mb-3 mr-2" style="width: 18rem;">
-                    <img src="./images/dijital-kale.jpg" style="margin: auto; width: 150px;" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Dijital Kale</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Dan Brown</h6>
-                      <p class="card-text .card-img-top">Dijital Kale, Amerikalı yazar Dan Brown tarafından yazılan ve ilk olarak 1998 yılında basılan bir tekno-gerilim romanıdır.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 ml-3 mb-2">
-                            <button type="button" class="btn btn-info btn-sm">İncele</button>
-                        </div>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-6 col-lg-4 col-xl-4">
-                <div class="card mb-3 mr-2" style="width: 18rem;">
-                    <img src="./images/80-gunde.jpg" style="margin: auto; width: 150px;" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">80 Günde Devr-i Alem</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">Jules Verne</h6>
-                      <p class="card-text th:text">Seksen Günde Devr-i Alem, Jules Verne'in yazdığı ve ilk kez 1872 yılında yayımlanan bir macera romanıdır. Verne'in en başarılı eserlerinden biri olarak bilinir.</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-3 ml-3 mb-2">
-                            <button type="button" class="btn btn-info btn-sm">İncele</button>
-                        </div>
-                    </div>
-                  </div>
+              <div class="card mb-3 mr-2" style="width: 18rem;">
+                <img style="margin: auto; height: 250px;" src="./images/aclik-oyunlari.jpg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Açlık Oyunları</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Suzanne Collins</h6>
+                  <p class="card-text text-truncate">Açlık Oyunları (İngilizce özgün adıyla The Hunger Games), Amerikalı yazar Suzanne Collins'in 2008'de yayımlanan distopik macera türündeki romanıdır.</p>
+                  <a href="#" class="btn btn-danger btn-sm float-right" role="button">Sil</a>
+                  <a href="#" class="btn btn-warning btn-sm float-right mx-2" role="button">Düzenle</a>
+                </div>
+              </div>
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                  <img style="margin: auto; width: 150px;" src="./images/da-vinci-sifresi.jpg" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Da Vinci Şifresi</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Dan Brown</h6>
-                    <p class="card-text">Da Vinci Şifresi ya da özgün adıyla The Da Vinci Code, Dan Brown'un kaleme aldığı bir romandır.</p>
-                  </div>
-                  <div class="row">
-                      <div class="col-sm-3 ml-3 mb-2">
-                          <button type="button" class="btn btn-info btn-sm">İncele</button>
-                      </div>
-                  </div>
+                <img style="margin: auto; height: 250px;" src="./images/amok-kosucusu.jpg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Amok Koşucusu</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Stefan Zweig</h6>
+                  <p class="card-text text-truncate">Amok Koşucusu, Stefan Zweig'ın 1922'de yazdığı bir uzun öyküdür. Öykü adını, Uzakdoğu'da bir tür cinnet hâlini târif etmek için kullanılan "amok" tâbirinden alır.</p>
+                  <a href="#" class="btn btn-danger btn-sm float-right" role="button">Sil</a>
+                  <a href="#" class="btn btn-warning btn-sm float-right mx-2" role="button">Düzenle</a>
                 </div>
+              </div>
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                  <img style="margin: auto; width: 150px;" src="./images/satranc.jpg" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Satranç</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Stefan Zweig</h6>
-                    <p class="card-text">Satranç, Stefan Zweig'in Brezilya'da sürgünde yazdığı eserlerindendir. İlk baskısı 250 adet olarak 1942 yılında Buenos Aires'te, İngilizce tercümesi 1944'te New York'ta yayımlandı.</p>
-                  </div>
-                  <div class="row">
-                      <div class="col-sm-3 ml-3 mb-2">
-                          <button type="button" class="btn btn-info btn-sm">İncele</button>
-                      </div>
-                  </div>
+                <img style="margin: auto; height: 250px;" src="./images/baslangic.jpg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Başlangıç</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Dan Brown</h6>
+                  <p class="card-text text-truncate">Başlangıç, Dan Brown'ın 2017 yılında yayımladığı, Robert Langdon serisinin devam kitabı. Dinlerin kökeni ve inanç değerleri hakkında yazılmış bir gizem romanı özelliği taşımaktadır.</p>
+                  <a href="#" class="btn btn-danger btn-sm float-right" role="button">Sil</a>
+                  <a href="#" class="btn btn-warning btn-sm float-right mx-2" role="button">Düzenle</a>
                 </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+              <div class="card mb-3 mr-2" style="width: 18rem;">
+                <img style="margin: auto; height: 250px;" src="./images/hayvan-ciftligi.jpg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Hayvan Çiftliği</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">George Orwell</h6>
+                  <p class="card-text text-truncate">Hayvan Çiftliği, George Orwell'in mecazi bir dille yazılmış, fabl tarzındaki siyasi hiciv romanı. Roman ilk olarak 1945'te Birleşik Krallık'ta yayımlandı.</p>
+                  <a href="#" class="btn btn-danger btn-sm float-right" role="button">Sil</a>
+                  <a href="#" class="btn btn-warning btn-sm float-right mx-2" role="button">Düzenle</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+              <div class="card mb-3 mr-2" style="width: 18rem;">
+                <img style="margin: auto; height: 250px;" src="./images/empati.jpg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Empati</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Adam Fawer</h6>
+                  <p class="card-text text-truncate">Empati, Amerikalı yazar Adam Fawer tarafından kaleme alınan 2008 basım tarihli gnostisizm, empati, sinestezi gibi konuları eksenine oturtmuş bir romandır.</p>
+                  <a href="#" class="btn btn-danger btn-sm float-right" role="button">Sil</a>
+                  <a href="#" class="btn btn-warning btn-sm float-right mx-2" role="button">Düzenle</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+              <div class="card mb-3 mr-2" style="width: 18rem;">
+                <img style="margin: auto; height: 250px;" src="./images/dijital-kale.jpg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Dijital Kale</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Dan Brown</h6>
+                  <p class="card-text text-truncate">Dijital Kale, Amerikalı yazar Dan Brown tarafından yazılan ve ilk olarak 1998 yılında basılan bir tekno-gerilim romanıdır.</p>
+                  <a href="#" class="btn btn-danger btn-sm float-right" role="button">Sil</a>
+                  <a href="#" class="btn btn-warning btn-sm float-right mx-2" role="button">Düzenle</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+              <div class="card mb-3 mr-2" style="width: 18rem;">
+                <img style="margin: auto; height: 250px;" src="./images/80-gunde.jpg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">80 Günde Devr-i Alem</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Jules Verne</h6>
+                  <p class="card-text text-truncate">Seksen Günde Devr-i Alem, Jules Verne'in yazdığı ve ilk kez 1872 yılında yayımlanan bir macera romanıdır. Verne'in en başarılı eserlerinden biri olarak bilinir.</p>
+                  <a href="#" class="btn btn-danger btn-sm float-right" role="button">Sil</a>
+                  <a href="#" class="btn btn-warning btn-sm float-right mx-2" role="button">Düzenle</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+              <div class="card mb-3 mr-2" style="width: 18rem;">
+                <img style="margin: auto; height: 250px;" src="./images/da-vinci-sifresi.jpg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Da Vinci Şifresi</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Dan Brown</h6>
+                  <p class="card-text text-truncate">Da Vinci Şifresi ya da özgün adıyla The Da Vinci Code, Dan Brown'un kaleme aldığı bir romandır.</p>
+                  <a href="#" class="btn btn-danger btn-sm float-right" role="button">Sil</a>
+                  <a href="#" class="btn btn-warning btn-sm float-right mx-2" role="button">Düzenle</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 col-xl-4">
+              <div class="card" style="width: 18rem;">
+                <img style="margin: auto; height: 250px;" src="./images/satranc.jpg" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Satranç</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Stefan Zweig</h6>
+                  <p class="card-text text-truncate">Satranç, Stefan Zweig'in Brezilya'da sürgünde yazdığı eserlerindendir. İlk baskısı 250 adet olarak 1942 yılında Buenos Aires'te, İngilizce tercümesi 1944'te New York'ta yayımlandı.</p>
+                  <a href="#" class="btn btn-danger btn-sm float-right" role="button">Sil</a>
+                  <a href="#" class="btn btn-warning btn-sm float-right mx-2" role="button">Düzenle</a>
+                </div>
+              </div>
             </div>
         </div>
     </div>
-    <footer class="container py-5 bg-dark" >
+    <footer class="container py-5" >
       <div class="row" style="font-size:12px">
-        <div class="col-12 col-md text-white" style="font-family:verdana;">
-          <h5 style="font-size:12px">KİTAP DOSTU!</h5>
-          <small class="d-block mb-3 text-white" style="font-size:9px">©2020-2021</small>
+        <div class="col-12 col-md text-dark" style="font-family:verdana;">
+          <h5 style="color:black; font-size:12px">KİTAP DOSTU!</h5>
+          <small class="d-block mb-3 text-dark" style="font-size:9px">©2020-2021</small>
         </div>
         <div class="col-1" style="font-family:verdana;">
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Yusuf USTA</h5>
+          <h5 style="color:black; font-size:15px;">Yusuf USTA</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/yusuf-usta-/" target="_blank">Linkedin</a></li>
-          </ul>
-        </div>
-        <div class="col-1" style="font-family:verdana;">
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Efe BÜYÜK</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/efe-buyuk-33b365193/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/yusuf-usta-/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
         <div class="col-1" style="font-family:verdana;">
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Talih DURAN</h5>
+          <h5 style="color:black; font-size:15px;">Efe BÜYÜK</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/talihduran/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/efe-buyuk-33b365193/" target="_blank">Linkedin</a></li>
+          </ul>
+        </div>
+        <div class="col-1" style="font-family:verdana;">
+          <h5 style="color:black; font-size:15px;">Talih DURAN</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-dark" href="https://www.linkedin.com/in/talihduran/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
         <div class="col-1" style="font-family:verdana;" >
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Yusuf BULAÇ</h5>
+          <h5 style="color:black; font-size:15px;">Yusuf BULAÇ</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/yusufbulac/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/yusufbulac/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
         <div class="col-1" style="font-family:verdana;" >
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Mesut YILMAZ</h5>
+          <h5 style="color:black; font-size:15px;">Mesut YILMAZ</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/hasankursadkorkmaz/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/hasankursadkorkmaz/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
         <div class="col-1" style="font-family:verdana;" >
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Hasan KORKMAZ</h5>
+          <h5 style="color:black; font-size:15px;">Hasan KORKMAZ</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/hasankursadkorkmaz/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/hasankursadkorkmaz/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
         <div class="col-1 col-sm" style="font-family:verdana;" >
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Mert AKSU</h5>
+          <h5 style="color:black; font-size:15px;">Mert AKSU</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/mertaksu1/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/mertaksu1/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
         <div class="col-1 col-sm" style="font-family:verdana;" >
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Nazlı AYHAN</h5>
+          <h5 style="color:black; font-size:15px;">Nazlı AYHAN</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/e-nazl%C4%B1-ayhan/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/e-nazl%C4%B1-ayhan/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
         <div class="col-1" style="font-family:verdana;" >
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Furkan YUNUS</h5>
+          <h5 style="color:black; font-size:15px;">Furkan YUNUS</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/furkan-yunus-aa182117a/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/furkan-yunus-aa182117a/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
         <div class="col-1 col-sm" style="font-family:verdana;" >
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Kadir ERMAN</h5>
+          <h5 style="color:black; font-size:15px;">Kadir ERMAN</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/kadirerman/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/kadirerman/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
         <div class="col-1" style="font-family:verdana;" >
-          <h5 style="color:rgb(241, 235, 234); font-size:15px;">Ünal GÜVEN</h5>
+          <h5 style="color:black; font-size:15px;">Ünal GÜVEN</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-white" href="https://www.linkedin.com/in/unalguven/" target="_blank">Linkedin</a></li>
+            <li><a class="text-dark" href="https://www.linkedin.com/in/unalguven/" target="_blank">Linkedin</a></li>
           </ul>
         </div>
-		
       </div>
     </footer>
     
