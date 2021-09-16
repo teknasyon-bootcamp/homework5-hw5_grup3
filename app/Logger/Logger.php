@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 namespace App\Logger;
@@ -24,3 +25,30 @@ class Logger implements LoggableInterface
 
     }
 }
+=======
+<?php
+
+namespace App\Logger;
+
+use App\DB\Engine\DriverInterface;
+use App\Logger\Driver\LogDriverInterface;
+
+class Logger implements LogDriverInterface
+{
+    protected DriverInterface $LogDriver;
+
+    public function __construct(DriverInterface $LogDriver)
+    {
+
+    }
+
+    protected function setDriver(DriverInterface $LogDriver): void{
+
+    }
+
+    public function log(string $message, int $level): void
+    {
+
+    }
+}
+>>>>>>> b086dbe8222bbdf99e7c3096262a2fb851c9b621

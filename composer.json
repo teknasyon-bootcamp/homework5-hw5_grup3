@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
     "name": "teknasyon/homework-hw5_grup3",
     "license": "MIT",
@@ -12,3 +13,17 @@
         }
     }
 }
+=======
+{
+    "name": "teknasyon/homework-hw5_grup3",
+    "license": "MIT",
+    "require": {
+      "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
+>>>>>>> b086dbe8222bbdf99e7c3096262a2fb851c9b621
