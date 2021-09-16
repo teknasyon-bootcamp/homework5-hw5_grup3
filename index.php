@@ -87,7 +87,7 @@ require "vendor/autoload.php";
     <div class="container">
         <div class="row">
             <div class="col-sm-3 mr-auto ml-auto mt-5 mb-5">
-                <h2 style="color:rgb(241, 235, 234);">KİTAPLARIMIZ</h2>
+                <h2 style="color:black;">KİTAPLARIMIZ</h2>
             </div>
         </div>
         <div class="row">
