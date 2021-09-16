@@ -10,7 +10,7 @@ class Database implements LogDriverInterface
 
     public function __construct(DriverInterface $driver)
     {
-
+        $this->driver = $driver;
     }
     public function setDriver(DriverInterface $driver):void{
         $this->driver = $driver;

@@ -8,12 +8,12 @@ class File implements LogDriverInterface
 
     public function __construct(string $logFile)
     {
-
+        $this->logFile = $logFile;
     }
 
     protected function setLogFile(string $logFile): void
     {
-
+        $this->logFile = $logFile;
     }
 
     public function setUp(): void

@@ -2,7 +2,9 @@
     "name": "teknasyon/homework-hw5_grup3",
     "license": "MIT",
     "require": {
-      "ext-pdo": "*"
+      "ext-pdo": "*",
+        "mongodb/mongodb": "^1.9",
+        "ext-mongo": "*"
     },
     "autoload": {
         "psr-4": {
