@@ -54,20 +54,20 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./images/kitaps4.jpg" class="d-block w-100" width="300" height="600" alt="..." style="max-height: 600px;">
+          <img src="resources/images/kitaps4.jpg" class="d-block w-100" width="300" height="600" alt="..." style="max-height: 600px;">
         </div>
         <div class="carousel-item">
-          <img src="./images/kitaps.jpg" class="d-block w-100" width ="300" height="600" alt="..."
+          <img src="resources/images/kitaps.jpg" class="d-block w-100" width ="300" height="600" alt="..."
           style="max-height: 600px;">
         </div>
         <div class="carousel-item">
-          <img src="./images/kitaps1.jpg" class="d-block w-100" width ="300" height="600" alt="" style="max-height: 600px;"> 
+          <img src="resources/images/kitaps1.jpg" class="d-block w-100" width ="300" height="600" alt="" style="max-height: 600px;">
         </div>
         <div class="carousel-item">
-          <img src="./images/kitaps2.jpg" class="d-block w-100" width="300" height="600" alt="" style="max-height: 600px;"> 
+          <img src="resources/images/kitaps2.jpg" class="d-block w-100" width="300" height="600" alt="" style="max-height: 600px;">
         </div>
         <div class="carousel-item">
-          <img src="./images/kitaps3.jpg" class="d-block w-100" width ="300" height="600" alt="" style="max-height: 600px;"> 
+          <img src="resources/images/kitaps3.jpg" class="d-block w-100" width ="300" height="600" alt="" style="max-height: 600px;">
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -89,7 +89,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                <img style="margin: auto; height: 250px;" src="./images/aclik-oyunlari.jpg" alt="...">
+                <img style="margin: auto; height: 250px;" src="resources/images/aclik-oyunlari.jpg" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Açlık Oyunları</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Suzanne Collins</h6>
@@ -101,7 +101,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                <img style="margin: auto; height: 250px;" src="./images/amok-kosucusu.jpg" alt="...">
+                <img style="margin: auto; height: 250px;" src="resources/images/amok-kosucusu.jpg" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Amok Koşucusu</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Stefan Zweig</h6>
@@ -113,7 +113,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                <img style="margin: auto; height: 250px;" src="./images/baslangic.jpg" alt="...">
+                <img style="margin: auto; height: 250px;" src="resources/images/baslangic.jpg" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Başlangıç</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Dan Brown</h6>
@@ -125,7 +125,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                <img style="margin: auto; height: 250px;" src="./images/hayvan-ciftligi.jpg" alt="...">
+                <img style="margin: auto; height: 250px;" src="resources/images/hayvan-ciftligi.jpg" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Hayvan Çiftliği</h5>
                   <h6 class="card-subtitle mb-2 text-muted">George Orwell</h6>
@@ -137,7 +137,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                <img style="margin: auto; height: 250px;" src="./images/empati.jpg" alt="...">
+                <img style="margin: auto; height: 250px;" src="resources/images/empati.jpg" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Empati</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Adam Fawer</h6>
@@ -149,7 +149,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                <img style="margin: auto; height: 250px;" src="./images/dijital-kale.jpg" alt="...">
+                <img style="margin: auto; height: 250px;" src="resources/images/dijital-kale.jpg" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Dijital Kale</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Dan Brown</h6>
@@ -161,7 +161,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                <img style="margin: auto; height: 250px;" src="./images/80-gunde.jpg" alt="...">
+                <img style="margin: auto; height: 250px;" src="resources/images/80-gunde.jpg" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">80 Günde Devr-i Alem</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Jules Verne</h6>
@@ -173,7 +173,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card mb-3 mr-2" style="width: 18rem;">
-                <img style="margin: auto; height: 250px;" src="./images/da-vinci-sifresi.jpg" alt="...">
+                <img style="margin: auto; height: 250px;" src="resources/images/da-vinci-sifresi.jpg" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Da Vinci Şifresi</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Dan Brown</h6>
@@ -185,7 +185,7 @@
             </div>
             <div class="col-md-6 col-lg-4 col-xl-4">
               <div class="card" style="width: 18rem;">
-                <img style="margin: auto; height: 250px;" src="./images/satranc.jpg" alt="...">
+                <img style="margin: auto; height: 250px;" src="resources/images/satranc.jpg" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">Satranç</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Stefan Zweig</h6>
