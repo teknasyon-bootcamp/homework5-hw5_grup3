@@ -1,4 +1,4 @@
-
+<!-- Views kısmına aktarılıp oradan geliştirme yapacağız-->
 <!doctype html>
 <html lang="en">
   <head>
