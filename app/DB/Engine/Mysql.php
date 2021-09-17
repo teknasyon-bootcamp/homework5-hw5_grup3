@@ -21,7 +21,6 @@ class Mysql implements DriverInterface
        $stmt = $this->pdo->prepare("SELECT * FROM $table");
        $stmt->execute();
        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-    
     }
 
     public function find(string $table, mixed $id): mixed
@@ -53,10 +52,8 @@ class Mysql implements DriverInterface
 
         $sql = rtrim($sql," , ");
         $sql .= ")";
-
         $stmt = $this->pdo->prepare($sql);
         return $stmt-> execute();
-
     }
 
     public function update(string $table, mixed $id, array $values): bool
@@ -65,18 +62,16 @@ class Mysql implements DriverInterface
 
         foreach($values as $value){
             foreach ($value as $key => $val){
-
                 if(is_string($val)){
                     $sql .= $key . " = " . "'" . $val . "'" . ", ";
                 }else{
                     $sql .= $key . " = " . $val . ", ";
                 }
-
             }  
         }
+
         $sql = rtrim($sql, " , ");
         $sql .= " WHERE id = $id";
-
         $stmt = $this->pdo->prepare($sql);
         return $stmt->execute();
 

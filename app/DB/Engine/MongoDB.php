@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 namespace App\DB\Engine;
@@ -39,56 +38,69 @@ class MongoDB implements DriverInterface
         return $result;
     }
 
-    public function create(string $table, array $values): bool
+    public function create(string $table, array $values): bool 
     {
-        // TODO: Implement create() method.
+        $db = $this->client->selectDatabase($this->dbname);
+        $collection = $db->$table;
+        $insertManyResult = $collection->insertMany($values);
+        return  $insertManyResult->isAcknowledged();
+
     }
 
     public function update(string $table, mixed $id, array $values): bool
     {
-        // TODO: Implement update() method.
+        $db = $this->client->selectDatabase($this->dbname);
+        $collection = $db->$table;
+        $updateResult = $collection->updateMany(
+            ['_id' => new \MongoDB\BSON\ObjectId($id)],
+            ['$set'=>$values]
+        );
+        return $updateResult->isAcknowledged();
     }
 
     public function delete(string $table, mixed $id): bool
     {
-        // TODO: Implement delete() method.
+        $db = $this->client->selectDatabase($this->dbname);
+        $collection = $db->$table;
+        $deleteResult = $collection->deleteMany(
+            ['_id' => new \MongoDB\BSON\ObjectID($id)]
+        );
+        return $deleteResult->isAcknowledged();
     }
-=======
-<?php
-
-namespace App\DB\Engine;
-
-class MongoDB implements DriverInterface
-{
-    protected MongoDB\Client $client; // MongoDB extension etkinlenştirildiğinde PDO nesnesi gibi kod sıkıntı çıkarmaz
-
-    public function __construct(string $protocol, string $host, string $user, string $pass, string $dbname, array $options)
-    {
-    }
-
-    public function all(string $table): array
-    {
-        // TODO: Implement all() method.
-    }
-
-    public function find(string $table, mixed $id): mixed
-    {
-        // TODO: Implement find() method.
-    }
-
-    public function create(string $table, array $values): bool
-    {
-        // TODO: Implement create() method.
-    }
-
-    public function update(string $table, mixed $id, array $values): bool
-    {
-        // TODO: Implement update() method.
-    }
-
-    public function delete(string $table, mixed $id): bool
-    {
-        // TODO: Implement delete() method.
-    }
->>>>>>> b086dbe8222bbdf99e7c3096262a2fb851c9b621
 }
+
+
+//Kullanım aşağıdaki gibidir
+
+
+
+//$mongoDb = new MongoDB("","","","","book_app",[]);
+//$insertArr = [
+//    [
+//    "name" => "Basreal",
+//    "author" => "AAA",
+//    "section" => [
+//        "1" => "Yeni Dünya Düzeni",
+//        "2" =>"Soğuk Savaşın Başlaması",
+//        "3" => "Yeni Dünya Düzeninin Yeniden değerlendirilmesi",
+//    ],
+//    "content" => "Yeni milli ve yerli framework",
+//    ]
+//
+//];
+//$books = $mongoDb->create("book",$insertArr);
+//
+//$config = include "config.php";
+//var_dump($config);
+
+//$mongoDb = new MongoDB("","","","","book_app",[]);
+//$updateArr =
+//[
+//    "name" => "Basreal Güncel halim",
+//    "author" => "Güncellendi",
+//];
+//$mongoDb->update('book',"6143b77fe77500001b003f54",$updateArr);
+
+//$mongoDb = new MongoDB("","","","","book_app",[]);
+//
+//$mongoDb->delete('book',"6143a458e77500001b003f4e");
