@@ -19,7 +19,7 @@ class Logger implements LoggableInterface
         $this->LogDriver = $LogDriver;
     }
 
-    public function log(string $message, int $level): void
+    public function log(string $message, string $level): void
     {
 
     }

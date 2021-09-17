@@ -13,6 +13,6 @@ interface LoggableInterface
     const INFO      = 'info';
     const DEBUG     = 'debug';
 
-    public function log(string $message, LoggableInterface): void;
+    public function log(string $message, string $level): void;
 
 }

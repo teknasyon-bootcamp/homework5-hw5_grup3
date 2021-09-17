@@ -18,12 +18,17 @@ class Database implements LogDriverInterface
 
     public function setUp(): void
     {
-        // TODO: Implement setUp() method.
+
     }
 
-    public function log(string $message, int $level): void
+    public function log(string $message, string $level): void
     {
-        // TODO: Implement log() method.
+       $this->driver->create("log",[
+           [
+               "message" => $message,
+               "level" => $level,
+           ]
+       ]);
     }
 
     public function tearDown(): void

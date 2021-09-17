@@ -2,19 +2,15 @@
 
 namespace App\Logger\Driver;
 
+use App\Logger\LoggableInterface;
+
 class File implements LogDriverInterface
 {
-    protected string $logFile; //log dosyası adı
-    protected string $timeZone; // zaman dilimi
-    protected string $ip; //client ip
-    protected string $fileAdress; //Dosya dizini adreslerinin stoklandığı değişken
+    protected string $logFile;
 
     public function __construct(string $logFile)
     {
-        if (!is_dir('Logs')){ //Logs adında klasör yoksa oluştur
-            mkdir('Logs');
-        }
-        $this->logFile = date('Y-m-d').".log"; //Logfile'ın default ismi o günün ismi olacak.
+        $this->logFile = $logFile;
     }
 
     protected function setLogFile(string $logFile): void
@@ -24,18 +20,23 @@ class File implements LogDriverInterface
 
     public function setUp(): void
     {
-        $this-> timeZone = date_default_timezone_set('Turkey'); //Timezone Türkiye olarak belirledik.
-        $this->ip = $_SERVER['REMOTE_ADDR']; //client ip
-        $this->fileAdress = fopen('Logs'."/".$this->logFile,'a'); //A etiketi ile log dosyası adında bir log dosyası yoksa oluştur, varsa devamına ekle diyoruz.
+        date_default_timezone_set('Europe/Istanbul');
     }
 
-    public function log(string $message, int $level): void
+    public function log(string $message, string $level): void
     {
-        fwrite($this->fileAdress,"[".$this->ip." ".date("Y-m-d H:i:s")."]:".$message." ($level)".PHP_EOL); //Log dosyamıza [ip gün saat]: log formatında log yazılıyor, sonuna da level ekleniyor.
+        $date = date("Y-m-d h:i:sa");
+        if(!file_exists($this->logFile)){
+            $data = LoggableInterface::INFO . " ". $date." ". "Log dosyası oluşturuldu" . PHP_EOL;
+            file_put_contents($this->logFile, $data,FILE_APPEND);
+        }
+        $data = $level . " ". $date ." ".$message . PHP_EOL;
+        file_put_contents($this->logFile, $data,FILE_APPEND);
     }
 
     public function tearDown(): void
     {
-        fclose($this->fileAdress); //Log dosyamızı kapıyoruz.
+        $data = "Logdan çıkıldı." . PHP_EOL;
+        file_put_contents($this->logFile, $data,FILE_APPEND);
     }
 }
