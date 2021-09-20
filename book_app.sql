@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 20 Eyl 2021, 17:23:49
--- Sunucu sürümü: 10.4.20-MariaDB
--- PHP Sürümü: 8.0.9
+-- Üretim Zamanı: 20 Eyl 2021, 21:01:16
+-- Sunucu sürümü: 10.4.21-MariaDB
+-- PHP Sürümü: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -200,8 +200,7 @@ INSERT INTO `section` (`id`, `section_name`, `content`, `bookId`) VALUES
 -- Tablo için indeksler `author`
 --
 ALTER TABLE `author`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `author_ibfk_1` (`bookId`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Tablo için indeksler `book`
@@ -219,17 +218,13 @@ ALTER TABLE `log`
 -- Tablo için indeksler `posts`
 --
 ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `posts_ibfk_1` (`authorId`),
-  ADD KEY `posts_ibfk_2` (`sectionId`),
-  ADD KEY `posts_ibfk_3` (`bookId`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Tablo için indeksler `section`
 --
 ALTER TABLE `section`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `section_ibfk_1` (`bookId`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
@@ -264,28 +259,6 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `section`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
-
---
--- Dökümü yapılmış tablolar için kısıtlamalar
---
-
---
--- Tablo kısıtlamaları `author`
---
-ALTER TABLE `author`
-  ADD CONSTRAINT `author_ibfk_1` FOREIGN KEY (`bookId`) REFERENCES `book` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Tablo kısıtlamaları `posts`
---
-ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_3` FOREIGN KEY (`bookId`) REFERENCES `book` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Tablo kısıtlamaları `section`
---
-ALTER TABLE `section`
-  ADD CONSTRAINT `section_ibfk_1` FOREIGN KEY (`bookId`) REFERENCES `book` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
