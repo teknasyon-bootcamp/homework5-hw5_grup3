@@ -23,50 +23,9 @@
         <div class="collapse navbar-collapse mynav" id="navbarNav" >
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/book-create.php">Create <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/index.php">Ana Sayfa<span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/book-store.php">Stored?<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/book-edit.php">Edit<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/book-update.php">Update<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/book.php">Books<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/section-create.php">S-Create<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/section-store.php">S-Storee<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/section-edit.php">S-Edit<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/section-update.php">S-Update<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/section-delete.php">S-Delete<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/post-create.php">P-Create<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/post-store.php">P-Store<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/post-edit.php">P-Edit<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/post-update.php">P-Update<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/post-delete.php">P-Delete<span class="sr-only">(current)</span></a>
-                </li>
+
             </ul>
         </div>
     </nav>

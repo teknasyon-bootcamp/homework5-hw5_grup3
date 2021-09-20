@@ -39,6 +39,7 @@ $authors = $db->all("author");
                 if (($book['image'] == "")){
                     $book['image'] = "resources/images/default.jpg";
                 }
+                $book_desc = substr($book['desc'],0, 100);
                 echo " 
 <!-- Book -->
          <div class='col-3 m-2'>
@@ -53,7 +54,7 @@ $authors = $db->all("author");
                     }
                 }
                     echo "</small>
-                    <p class='card-text'>$book[id]</p>
+                    <p class='card-text'>$book_desc</p>
                     <a href='book-edit.php?id=$book[id]' class='btn btn-warning btn-attr'>Düzenle</a>
                 <a href='book-delete.php?id=$book[id]' class='btn btn-danger btn-attr'>Sil</a>
                 </div>
