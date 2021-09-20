@@ -110,7 +110,11 @@ if (isset($_GET['id'])){
         <?php
         foreach ($posts as $post){
             if($book['id'] == $post['bookId']){
-            echo "<div><p>$post[post]</p></div>";
+            echo "<div class='mt-5'><p>$post[post]</p></div>
+                <div class='mt-3'>
+                    <a href='post-edit.php?id=$post[id]' class='btn btn-warning mr-3 '>Post Düzenle</a> 
+                    <a href='post-delete.php?id=$post[id]' class='btn btn-danger '>Post Sil</a>
+                </div> ";
         }
         }
         ?>
