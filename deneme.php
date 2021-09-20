@@ -3,17 +3,23 @@ require "vendor/autoload.php";
 
 use \App\Logger\Driver\File;
 use \App\Logger\LoggableInterface;
+use \App\DB\Engine\Mysql;
 
-$logFile = __DIR__."\storage\logs\\logs.log";
+$mongodb = new \App\DB\Engine\MongoDB("","","","","book_app",[]);
+$mysql = new Mysql("localhost", "root","","book_app");
+$db = new \App\DB\Database();
+$db->setDriver($mysql);
+
+
+$Databaselogger = new \App\Logger\Driver\Database($mysql);
+
+$books = $db->all("book");
+$Databaselogger->setUp();
+$Databaselogger->log("Sisteme izinsiz giriş yapıldı",LoggableInterface::ALERT);
+$Databaselogger->tearDown();
 
 
 
 
-$db = new \App\DB\Engine\Mysql("localhost","root","","book_app");
-
-
-$dblogger = new \App\Logger\Driver\Database($db);
-
-$dblogger->log("İzinsiz giriş engellendi",LoggableInterface::WARNING);
 
 

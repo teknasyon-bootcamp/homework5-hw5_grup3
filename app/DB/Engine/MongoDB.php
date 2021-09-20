@@ -9,13 +9,13 @@ class MongoDB implements DriverInterface
     protected \MongoDB\Client $client;
     protected $dbname;
 
-    public function __construct(string $protocol, string $host, string $user, string $pass, string $dbname, array $options)
+    public function __construct(string $protocol, string $host, string $user, string $pass, string $dbname, ?array $options)
     {
         try{
             //$this->client = new \MongoDB\Client("mongodb://$user:$pass@$host:$protocol/$dbname");//Düzenlenecek;
 
             $this->dbname = $dbname;
-            $this->client = new \MongoDB\Client("mongodb://localhost:27017");
+
 
         }catch (\MongoException $exception){
             echo $exception->getMessage();
