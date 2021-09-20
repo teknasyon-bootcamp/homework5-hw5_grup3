@@ -26,6 +26,13 @@
                     <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/index.php">Ana Sayfa<span class="sr-only">(current)</span></a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/import.php">İçe Aktar<span class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" style="color: white;" href="http://localhost/homework5-hw5_grup3/export.php">Dışa Aktar<span class="sr-only">(current)</span></a>
+                </li>
             </ul>
         </div>
     </nav>
