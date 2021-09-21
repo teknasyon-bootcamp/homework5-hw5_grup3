@@ -3,14 +3,21 @@
 require "vendor/autoload.php";
 
 $config = require "config.php";
+
 $engine = $config['engine'];
 $host = $config['host'];
 $user = $config['user'];
 $pass = $config['password'];
+$log_type = $config['logging'];
+$log_file_dir = __DIR__."/storage/logs/logs.log";
 
 use App\DB\Engine\Mysql;
 use App\DB\Engine\MongoDB;
 use App\Db\Database;
+use App\Logger\Driver\Database as LoggerDatabase;
+use App\Logger\Driver\File;
+use App\Logger\Logger;
+use App\Logger\LoggableInterface;
 
 
 if ($engine == "mysql") {
@@ -18,10 +25,25 @@ if ($engine == "mysql") {
 } elseif ($engine =="mongodb") {
     $driver = new MongoDB("", "", "", "", "", []);
 }
-$db = new Database();
-$db->setDriver($driver);
-$books = $db->all("book");
-$authors = $db->all("author");
+if($log_type =="file"){
+    $logger = new Logger(new File($log_file_dir));
+}else{
+    $logger = new Logger(new LoggerDatabase($driver));
+}
+try{
+    $db = new Database();
+    $db->setDriver($driver);
+}catch (Exception $e){
+    $logger->log($e, LoggableInterface::ERROR);
+}
+
+try{
+    $books = $db->all("book");
+    $authors = $db->all("author");
+}catch (Exception $e){
+    $logger->log($e, LoggableInterface::ERROR);
+}
+
 ?>
 
 <?php  include "_shared/header.php";?>
@@ -64,17 +86,11 @@ $authors = $db->all("author");
         ";
             }
         ?>
-
-
     </div>
-
     <!-- Books -->
     <hr>
 </div>
 
 
 <?php include "_shared/footer.php";?>
-<?php
-$driver = null;
-$db = null;
-?>
+

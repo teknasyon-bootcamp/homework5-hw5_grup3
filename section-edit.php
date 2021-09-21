@@ -7,7 +7,6 @@ if (isset($_GET['id'])){
 
 ?>
 
-
 <?php include "_shared/header.php";?>
 
 <div class="container">

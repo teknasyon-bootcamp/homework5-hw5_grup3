@@ -3,14 +3,21 @@
 require "vendor/autoload.php";
 
 $config = require "config.php";
+
 $engine = $config['engine'];
 $host = $config['host'];
 $user = $config['user'];
 $pass = $config['password'];
+$log_type = $config['logging'];
+$log_file_dir = __DIR__."/storage/logs/logs.log";
 
 use App\DB\Engine\Mysql;
 use App\DB\Engine\MongoDB;
 use App\Db\Database;
+use App\Logger\Driver\Database as LoggerDatabase;
+use App\Logger\Driver\File;
+use App\Logger\Logger;
+use App\Logger\LoggableInterface;
 
 
 if ($engine == "mysql") {
@@ -18,14 +25,28 @@ if ($engine == "mysql") {
 } elseif ($engine =="mongodb") {
     $driver = new MongoDB("", "", "", "", "", []);
 }
-$db = new Database();
-$db->setDriver($driver);
+if($log_type =="file"){
+    $logger = new Logger(new File($log_file_dir));
+}else{
+    $logger = new Logger(new LoggerDatabase($driver));
+}
+try{
+    $db = new Database();
+    $db->setDriver($driver);
+}catch (Exception $e){
+    $logger->log($e, LoggableInterface::ERROR);
+}
+
 
 $section_name = $_GET['section_name'];
 $section_content = $_GET['content'];
 $section_id = $_GET['id'];
 
-$is_updated = $db->update("section",$section_id,[["section_name"=>$section_name, "content"=>$section_content]]);
+try{
+    $is_updated = $db->update("section",$section_id,[["section_name"=>$section_name, "content"=>$section_content]]);
+}catch (Exception $e){
+    $logger->log($e, LoggableInterface::ERROR);
+}
 
 ?>
 
@@ -33,7 +54,7 @@ $is_updated = $db->update("section",$section_id,[["section_name"=>$section_name,
 
 <?php
 if($is_updated){
-    echo "<p class='text-center'>Kitap başarıyla güncellendi</p>";
+    echo "<p class='text-center'>Bölüm başarıyla güncellendi</p>";
     echo "<br>";
     echo "<div class='d-flex justify-content-center'><a href='http://localhost/homework5-hw5_grup3/index.php' class='btn btn-primary mt-5'>Anasayfaya geri dön</a></div>";
 }

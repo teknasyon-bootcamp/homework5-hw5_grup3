@@ -3,14 +3,21 @@
 require "vendor/autoload.php";
 
 $config = require "config.php";
+
 $engine = $config['engine'];
 $host = $config['host'];
 $user = $config['user'];
 $pass = $config['password'];
+$log_type = $config['logging'];
+$log_file_dir = __DIR__."/storage/logs/logs.log";
 
 use App\DB\Engine\Mysql;
 use App\DB\Engine\MongoDB;
 use App\Db\Database;
+use App\Logger\Driver\Database as LoggerDatabase;
+use App\Logger\Driver\File;
+use App\Logger\Logger;
+use App\Logger\LoggableInterface;
 
 
 if ($engine == "mysql") {
@@ -18,14 +25,29 @@ if ($engine == "mysql") {
 } elseif ($engine =="mongodb") {
     $driver = new MongoDB("", "", "", "", "", []);
 }
-$db = new Database();
-$db->setDriver($driver);
+if($log_type =="file"){
+    $logger = new Logger(new File($log_file_dir));
+}else{
+    $logger = new Logger(new LoggerDatabase($driver));
+}
+try{
+    $db = new Database();
+    $db->setDriver($driver);
+}catch (Exception $e){
+    $logger->log($e, LoggableInterface::ERROR);
+}
 
 if (isset($_GET['id'])){
-    $book = $db->find("book",$_GET['id']);
-    $authors = $db->all("author");
-    $sections = $db->all("section");
-    $posts = $db->all("posts");
+
+    try {
+        $book = $db->find("book",$_GET['id']);
+        $authors = $db->all("author");
+        $sections = $db->all("section");
+        $posts = $db->all("posts");
+
+    }catch (Exception $e){
+        $logger->log($e, LoggableInterface::ERROR);
+    }
 
     foreach ($authors as $author){
         if ($book['id'] == $author['bookId']){
@@ -44,7 +66,6 @@ if (isset($_GET['id'])){
         }
     }
 }
-
 
 ?>
 
@@ -73,7 +94,6 @@ if (isset($_GET['id'])){
         </tr>
         </thead>
         <tbody>
-
 
     <?php
     if (isset($_GET['id'] ) && isset($section_operations_arr)){

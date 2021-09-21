@@ -13,7 +13,7 @@ class MongoDB implements DriverInterface
     {
         try{
             //$this->client = new \MongoDB\Client("mongodb://$user:$pass@$host:$protocol/$dbname");//Düzenlenecek;
-
+            $this->client = new \MongoDB\Client("mongodb://127.0.0.1/");
             $this->dbname = $dbname;
 
 

@@ -1,7 +1,4 @@
 <?php
-require "vendor/autoload.php";
-
-$config = require "config.php";
 
 $config = require "config.php";
 
@@ -37,23 +34,3 @@ try{
 }catch (Exception $e){
     $logger->log($e, LoggableInterface::ERROR);
 }
-
-$id = $_GET['id'];
-
-try {
-    $is_deleted = $db->delete("section",$id);
-}catch (Exception $e){
-    $logger->log($e, LoggableInterface::ERROR);
-}
-
-?>
-<?php include "_shared/header.php";?>
-<?php
-if($is_deleted){
-    echo "<p class='text-center alert-success'>Bölüm başarıyla silindi</p>";
-    echo "<br>";
-    echo "<div class='d-flex justify-content-center'><a href='http://localhost/homework5-hw5_grup3/index.php' class='btn btn-primary mt-5'>Anasayfaya geri dön</a></div>";
-}
-?>
-?>
-<?php include "_shared/footer.php";?>

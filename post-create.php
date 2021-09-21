@@ -8,10 +8,16 @@ $engine = $config['engine'];
 $host = $config['host'];
 $user = $config['user'];
 $pass = $config['password'];
+$log_type = $config['logging'];
+$log_file_dir = __DIR__."/storage/logs/logs.log";
 
 use App\DB\Engine\Mysql;
 use App\DB\Engine\MongoDB;
 use App\Db\Database;
+use App\Logger\Driver\Database as LoggerDatabase;
+use App\Logger\Driver\File;
+use App\Logger\Logger;
+use App\Logger\LoggableInterface;
 
 
 if ($engine == "mysql") {
@@ -19,26 +25,40 @@ if ($engine == "mysql") {
 } elseif ($engine =="mongodb") {
     $driver = new MongoDB("", "", "", "", "", []);
 }
-$db = new Database();
-$db->setDriver($driver);
+if($log_type =="file"){
+    $logger = new Logger(new File($log_file_dir));
+}else{
+    $logger = new Logger(new LoggerDatabase($driver));
+}
+try{
+    $db = new Database();
+    $db->setDriver($driver);
+}catch (Exception $e){
+    $logger->log($e, LoggableInterface::ERROR);
+}
 
 if (isset($_GET['post'])){
     $post = $_GET['post'];
     $book_id = $_GET['id'];
+
     try{
         $is_created = $db->create("posts",[["post"=>$post, "bookId" => $book_id]]);
     }catch (Exception $e){
-
+        $logger->log($e, LoggableInterface::ERROR);
     }
 
-    if ($is_created){
-    echo "Başarıyla post oluşturudlu";
 
-    }
 }
 ?>
 <?php include "_shared/header.php";?>
+  <?php
+if(isset($is_created)){
 
+    echo "<p class='text-center alert-success'>Post başarıyla oluşturuldu</p>";
+    echo "<br>";
+    echo "<div class='d-flex justify-content-center'><a href='http://localhost/homework5-hw5_grup3/index.php' class='btn btn-primary mt-5'>Anasayfaya geri dön</a></div>";
+}
+    ?>
     <div class="container">
         <h1>Kitap İçin Post Oluştur</h1>
         <form action='post-create.php' method='GET'>

@@ -2,25 +2,27 @@
 
 namespace App\Logger;
 
-use App\DB\Engine\DriverInterface;
 use App\Logger\Driver\LogDriverInterface;
 
 class Logger implements LoggableInterface
 {
 
-    protected DriverInterface $logDriver;
+    protected LogDriverInterface $LogDriver;
 
-    public function __construct(DriverInterface $LogDriver)
+    public function __construct(LogDriverInterface $LogDriver)
     {
         $this->LogDriver = $LogDriver;
     }
 
-    protected function setDriver(DriverInterface $LogDriver): void{
+    public function setDriver(LogDriverInterface $LogDriver): void{
         $this->LogDriver = $LogDriver;
     }
 
     public function log(string $message, string $level): void
     {
+        $this->LogDriver->setUp();
+        $this->LogDriver->log($message, $level);
+        $this->LogDriver->tearDown();
 
     }
 }

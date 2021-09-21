@@ -84,7 +84,7 @@ class Mysql implements DriverInterface
         return $stmt->execute();
     }
 
-    public function getPdo() {
+    public function getPdo() { // :(
         return $this->pdo;
     }
 }

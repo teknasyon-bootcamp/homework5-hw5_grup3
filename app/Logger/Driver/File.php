@@ -13,7 +13,7 @@ class File implements LogDriverInterface
         $this->logFile = $logFile;
     }
 
-    protected function setLogFile(string $logFile): void
+    public function setLogFile(string $logFile): void
     {
         $this->logFile = $logFile;
     }
