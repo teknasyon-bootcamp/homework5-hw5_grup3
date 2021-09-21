@@ -1,8 +1,8 @@
 <?php
-require "vendor/autoload.php";
+require "vendor/autoload.php"; // Autoload çağrılıyor
 
 $config = require "config.php";
-
+// DB başlatılıyor
 $engine = $config['engine'];
 $host = $config['host'];
 $user = $config['user'];
@@ -18,7 +18,7 @@ use App\Logger\Driver\File;
 use App\Logger\Logger;
 use App\Logger\LoggableInterface;
 
-
+// DB Seçim Bölümü
 if ($engine == "mysql") {
     $driver = new Mysql($host, $user, $pass, "book_app");
 } elseif ($engine =="mongodb") {
@@ -29,17 +29,17 @@ if($log_type =="file"){
 }else{
     $logger = new Logger(new LoggerDatabase($driver));
 }
-try{
+try{ // DB Hata Kontrol Bölümü
     $db = new Database();
     $db->setDriver($driver);
 }catch (Exception $e){
     $logger->log($e, LoggableInterface::ERROR);
 }
-
+// İşlem için $_POST['export'] kontolü yapılıyor
 if (isset($_POST['export'])) {
     $file = "export.json";
 
-    $pdo = $driver->getPdo();
+    $pdo = $driver->getPdo(); //DB verilerin çekilmesi için SQL komutu oluşturuluyor
     $db_name = $pdo->query("SELECT DATABASE()")->fetchColumn();
 
     $tables = array();
@@ -53,8 +53,8 @@ if (isset($_POST['export'])) {
     $table[0] = array("type" => "database", "name" => $db_name);
 
     $i = 1;
-
-    foreach ($tables as $table_name) {
+    // DB verileri ilgili değişkenlere aktarılıyor
+    foreach ($tables as $table_name) { 
         $query = $pdo->query("SELECT * FROM $table_name");
         $query-> execute();
 
@@ -72,7 +72,7 @@ if (isset($_POST['export'])) {
 
     header('Content-type: application/json');
     header('Content-Disposition: attachment; filename="'. $file .'"');
-    echo json_encode($table);
+    echo json_encode($table); // Veriler JSON tarzına dönüştürülüyor
     exit();
 }
 

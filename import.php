@@ -1,8 +1,8 @@
 <?php
-require "vendor/autoload.php";
+require "vendor/autoload.php"; // Autoload çağrılıyor
 
 $config = require "config.php";
-
+// DB başlatılıyor
 $engine = $config['engine'];
 $host = $config['host'];
 $user = $config['user'];
@@ -18,7 +18,7 @@ use App\Logger\Driver\File;
 use App\Logger\Logger;
 use App\Logger\LoggableInterface;
 
-
+// DB Seçim Bölümü
 if ($engine == "mysql") {
     $driver = new Mysql($host, $user, $pass, "book_app");
 } elseif ($engine =="mongodb") {
@@ -29,29 +29,29 @@ if($log_type =="file"){
 }else{
     $logger = new Logger(new LoggerDatabase($driver));
 }
-try{
+try{ //DB Hata Kontrol Bölümü
     $db = new Database();
     $db->setDriver($driver);
 }catch (Exception $e){
     $logger->log($e, LoggableInterface::ERROR);
 }
-
+// İşlem için $_POST['import'] kontolü yapılıyor
 if(isset($_POST['import'])) {
     $fileName = $_FILES['file']['name'];
     $tempName = $_FILES['file']['tmp_name'];
 
     if(isset($fileName)) {
-        if(empty($fileName)) {
+        if(empty($fileName)) { // Dosya seçim kontrolü
             $fileError = "Dosya seçilmedi!";
         } else {
-            $location = "storage/";
+            $location = "storage/"; 
             $temp_file = move_uploaded_file($tempName, $location.$fileName);
 
             if($temp_file) {
                 $pdo = $driver->getPdo();
 
                 $json_file  = file_get_contents($location.$fileName);
-                $data = json_decode($json_file, true);
+                $data = json_decode($json_file, true); // JSON biçiminden çözümleme
 
                 for ($i = 0; $i < count($data); $i++) {
                     $type = array_values($data[$i])[0];
@@ -60,10 +60,10 @@ if(isset($_POST['import'])) {
                         $table = array_values($data[$i])[1];
                         $values = array_values($data[$i])[3];
 
-                        $pdo->query("TRUNCATE $table");
+                        $pdo->query("TRUNCATE $table"); // Tablolar başaltılıyor
 
-                        foreach($values as $value) {
-                            $sql = "INSERT INTO $table VALUES (";
+                        foreach($values as $value) { 
+                            $sql = "INSERT INTO $table VALUES ("; // Alınan verilerin DB aktarımı içim SQL komutu oluşturuluyor
 
                             foreach ($value as $val){
                                 $sql .= "'". $val . "'". ",";
@@ -72,7 +72,7 @@ if(isset($_POST['import'])) {
                             $sql = rtrim($sql," , ");
                             $sql .= ")";
 
-                            $pdo->query($sql);
+                            $pdo->query($sql); //Alınan veriler Db aktarılıyor
                         }
                     }
                 }
