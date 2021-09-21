@@ -1,9 +1,9 @@
 <?php
-
+//autoload dahil edilir
 require "vendor/autoload.php";
 
 $config = require "config.php";
-
+//DB çalıştırılır
 $engine = $config['engine'];
 $host = $config['host'];
 $user = $config['user'];
@@ -36,7 +36,7 @@ try{
 }catch (Exception $e){
     $logger->log($e, LoggableInterface::ERROR);
 }
-
+//geti ile gelen id değeri yakalanır
 if (isset($_GET['id'])){
 
     $bookId = $_GET['id'];
@@ -55,7 +55,7 @@ if (isset($_GET['id'])){
 
 ?>
 <?php include "_shared/header.php";?>
-
+<!--Edit işlemi için form bölümü -->
     <div class="container">
         <h1>Kitap Düzenleme Sayfası</h1>
         <form action='book-update.php'  method='GET'>
