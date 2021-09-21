@@ -1,9 +1,9 @@
 <?php
-
+//autoload çağırılır
 require "vendor/autoload.php";
 
 $config = require "config.php";
-
+//DB başlatılıyor
 $engine = $config['engine'];
 $host = $config['host'];
 $user = $config['user'];
@@ -36,11 +36,11 @@ try{
 }catch (Exception $e){
     $logger->log($e, LoggableInterface::ERROR);
 }
-
+//get ile gelen bir değer olup olmadığı kontrol ediliyor
 if(isset($_GET['book']) || isset($_GET['author'])){
     $book = $_GET['book'];
     $author = $_GET['author'];
-
+//create metodu çalışıyor
     try{
         $bookCreateState = $db->create("book",[["name" =>$book]]);
         $books = $db->all("book");
@@ -66,6 +66,7 @@ if(isset($_GET['book']) || isset($_GET['author'])){
 }
 ?>
 <?php include "_shared/header.php";?>
+<!-- Kitap oluşturmak için form -->
 <div class="container">
     <h1>Kitap Oluşturma Sayfası</h1>
     <form action='book-create.php' method='GET'>
